@@ -258,22 +258,22 @@
     ];
     var uStates = {};
 
-    uStates.draw = function (id, data) {
-        function mouseOver(d) {
-
-        }
-
-        function mouseOut() {
+    uStates.draw = function (id) {
+        /**
+         * TODO Liefert den State in eine Angular variable.
+         * @param d
+         */
+        function showState(d) {
+            alert(d.n);
         }
 
         d3.select(id).selectAll(".state")
-            .data(uStatePaths).enter().append("path").attr("class", "state").attr("d", function (d) {
+            .data(uStatePaths).enter().append("path").attr("class", "state").attr("id", function (d) {
+            return d.id;
+        }).attr("d", function (d) {
             return d.d;
         })
-            // .style("fill", function (d) {
-            //     return data[d.id].color;
-            // })
-            .on("mouseover", mouseOver).on("mouseout", mouseOut);
+            .on("click", showState);
     }
     this.uStates = uStates;
 })();
