@@ -274,7 +274,7 @@
             return d.d;
         })
             .on("click", showState);
-    }
+    };
     this.uStates = uStates;
 })();
 
