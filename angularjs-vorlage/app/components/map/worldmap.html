@@ -1,20 +1,34 @@
-<style>
-    .state {
-        fill: lightgoldenrodyellow;
-        stroke: #a9a9a9;
-        stroke-width: 1;
-    }
+<!DOCTYPE html>
+<head>
+    <style>
+        .state {
+            fill: lightgoldenrodyellow;
+            stroke: #a9a9a9;
+            stroke-width: 1;
+        }
 
-    .state:hover {
-        /*fill-opacity:0.5;*/
-        fill: #000000;
-    }
-</style>
+        .state:hover {
+            /*fill-opacity:0.5;*/
+            fill: #000000;
+        }
 
-<svg width="960" height="600" id="statesvg"></svg>
-<script src="uStates.js"></script>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+        .wrapper{
+            width: 100%;
+            height: 60vh;
+        }
+
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <svg viewBox="0 0 1000 600" id="statesvg" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
 <script>
     uStates.draw("#statesvg");
     d3.select(self.frameElement).style("height", "600px");
 </script>
+</body>
