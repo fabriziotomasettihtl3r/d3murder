@@ -12,23 +12,20 @@
             fill: #000000;
         }
 
-        .wrapper{
+        .wrapper {
             width: 100%;
             height: 60vh;
         }
 
-        svg{
+        svg {
             width: 100%;
             height: 100%;
         }
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper" id="map">
     <svg viewBox="0 0 1000 600" id="statesvg" xmlns="http://www.w3.org/2000/svg"></svg>
 </div>
-<script>
-    uStates.draw("#statesvg");
-    d3.select(self.frameElement).style("height", "600px");
-</script>
+<p ng-bind="$ctrl.hi || 'Hallo'"></p>
 </body>

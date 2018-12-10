@@ -264,7 +264,7 @@
          * @param d
          */
         function showState(d) {
-            alert(d.n);
+           alert(d.n);
         }
 
         d3.select(id).selectAll(".state")
