@@ -1,0 +1,52 @@
+Id,State,Male,Female,Unknown
+0,United States,,,
+1,Alabama,46,39,0
+2,Alaska,,,
+3,Arizona,511,438,7
+4,Arkansas,7757,8328,146
+5,California,,,
+6,Colorado,11254,10016,27
+7,Connecticut,2721,2019,9
+8,Delaware,2631,1948,7
+9,Florida,,,
+10,Georgia,,,
+11,Hawaii,,,
+12,Idaho,1676,2070,19
+13,Illinois,1231,1175,33
+14,Indiana,403,604,1
+15,Iowa,4146,4703,21
+16,Kansas,7230,1540,411
+17,Kentucky,8179,1591,76
+18,Louisiana,2181,674,340
+19,Maine,490,80,0
+20,Maryland,,,
+21,Massachusetts,12646,3496,108
+22,Michigan,30020,8524,894
+23,Minnesota,,,
+24,Mississippi,,,
+25,Missouri,7805,1870,868
+26,Montana,2801,665,61
+27,Nebraska,1143,206,32
+28,Nevada,,,
+29,New Hampshire,2020,334,20
+30,New Jersey,,,
+31,New Mexico,,,
+32,New York,,,
+33,North Carolina,,,
+34,North Dakota,1549,319,38
+35,Ohio,26184,4930,2344
+36,Oklahoma,3770,792,112
+37,Oregon,8983,1599,209
+38,Pennsylvania,128,8,2
+39,Rhode Island,1659,307,17
+40,South Carolina,18989,4392,1318
+41,South Dakota,1925,346,7
+42,Tennessee,35436,7680,2313
+43,Texas,16116,3339,729
+44,Utah,5095,891,68
+45,Vermont,779,122,1
+46,Virginia,14173,2653,1170
+47,Washington,18169,3632,833
+48,West Virginia,4019,1023,122
+49,Wisconsin,14709,2755,1032
+50,Wyoming,,,
