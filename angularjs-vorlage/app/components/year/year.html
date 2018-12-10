@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Years</title>
+    <script src="../d3.min.js"></script>
+    <script src="../papaparse.min.js"></script>
+    <style>
+        svg {
+            width: 80%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 400 200">
+        <rect x="0" y="0" width="400" height="200" stroke="#000" stroke-width="5px" fill="#fff"></rect>
+        <path id="yearCurve" stroke="#dedede" stroke-width="2px"></path>
+    </svg>
+
+    <script>
+        let years;
+        let stateName = "Rhode Island";
+        let yearRange = [2007, 2017];
+        //d3.csv('../../../../csv/year2.csv', function(data) {
+        //    console.log(data);
+            /*data.forEach(function(d) {
+
+            });*/
+            /*data.forEach(function(d) {
+                console.log(d);
+                if (d.State === stateName) {
+                    console.log("State was found.");
+                    years = curData;
+                }
+                else {
+                    console.log(`${d} is not the right State.`);
+                }
+            });*/
+        //});
+
+        Papa.parse('../../../../csv/year2.csv', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function (results) {
+                console.log("csv found", results);
+                let data = [];
+                let dataRange = [];
+                results.data.forEach(e => {
+                    if (e.State === stateName.replace(/ /g,'')) {
+                        console.log("state found", e);
+                        for (let i = yearRange[0]; i <= yearRange[1]; i++) {
+                            data.push([i, e[i]]);
+                            dataRange.push([e[i]]);
+                        }
+                        console.log("data generated", data);
+                        let lineGenerator = d3.line().curve(d3.curveNatural);
+                        let pathString = lineGenerator(data);
+                        console.log("pathString generated", pathString);
+                        let scaleX = d3.scaleLinear().domain(yearRange).range([10, 390]);
+                        let scaleY = d3.scaleLinear().domain([d3.min(dataRange), d3.max(dataRange)]).range([190, 10]);
+                        let scaledValues = [];
+                        for (let i = 0; i < yearRange; i++) {
+                            scaledValues.push([scaleX(yearRange)]);
+                            scaledValues.push([scaleY(e[i])]);
+
+                        }
+                        d3.select('path#yearCurve').attr('d', pathString);
+                    }
+                });
+            }
+        });
+
+        /*
+            let lineGenerator = d3
+                .line()
+                .curve(d3.curveNatural);
+            let pathString = lineGenerator(data);
+
+            d3.select('path')
+                .attr('d', pathString);
+                */
+
+    </script>
+</body>
+</html>
