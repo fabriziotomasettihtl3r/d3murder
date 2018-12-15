@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d50559e-980c-4586-88ac-ed3e32169527" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/d3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/d3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/papaparse.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/papaparse.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/year/year.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csv/year2.csv" afterDir="false" />
+
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/d3murder.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/d3murder.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularjs-vorlage/app/components/map/uStates.js" beforeDir="false" afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/map/uStates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/angularjs-vorlage/app/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/angularjs-vorlage/app/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,33 +18,147 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
+
+    <session id="-34983757">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="11" />
+
     <session id="-1077552802">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.opened" value="3" />
+
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+
+          <entry key="css" value="1" />
+          <entry key="html" value="3" />
+          <entry key="js" value="6" />
+
           <entry key="csv" value="2" />
           <entry key="html" value="3" />
+
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="3" />
+          <entry key="JavaScript" value="6" />
+
           <entry key="CSV" value="2" />
           <entry key="HTML" value="3" />
+
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+
+          <entry key="html" value="602" />
+          <entry key="js" value="1740" />
+
           <entry key="html" value="2190" />
+
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="HTML" value="602" />
+          <entry key="JavaScript" value="1740" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="445">
+                  <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="65">
+                  <caret line="266" column="23" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="29" selection-start-line="29" selection-end-line="29" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/uStates.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="260">
+                  <caret line="269" column="21" selection-start-line="269" selection-start-column="21" selection-end-line="269" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#37#73383#0" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="440">
+                  <caret line="22" column="74" selection-start-line="22" selection-start-column="74" selection-end-line="22" selection-end-column="74" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ustates</find>
+      <find>uStats</find>
+      <find>this.uStates</find>
+      <find>uStates</find>
+    </findStrings>
           <entry key="HTML" value="2190" />
         </counts>
       </usages-collector>
@@ -130,11 +245,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="8945aa44eec82801ade52f765826363a63f96a8f" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/angularjs-vorlage/app/components/map/uStates.js" />
         <option value="$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.html" />
+        <option value="$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.js" />
+        <option value="$PROJECT_DIR$/angularjs-vorlage/app/index.html" />
         <option value="$PROJECT_DIR$/angularjs-vorlage/app/components/year/test.html" />
         <option value="$PROJECT_DIR$/csv/year2.csv" />
         <option value="$PROJECT_DIR$/angularjs-vorlage/app/components/year/year.html" />
@@ -253,6 +376,13 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="map" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="d3murder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="d3murder" type="462c0819:PsiDirectoryNode" />
+              <item name="angularjs-vorlage" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -262,6 +392,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SVG_Web" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -301,6 +432,17 @@
       <updated>1541405310178</updated>
       <workItem from="1541405311416" duration="23000" />
       <workItem from="1541405653319" duration="237000" />
+      <workItem from="1542010568043" duration="3485000" />
+      <workItem from="1542015555722" duration="345000" />
+      <workItem from="1542020292303" duration="7000" />
+      <workItem from="1542614413483" duration="509000" />
+      <workItem from="1542619913426" duration="1110000" />
+      <workItem from="1542705375130" duration="89000" />
+      <workItem from="1543219293645" duration="1159000" />
+      <workItem from="1543310646160" duration="26000" />
+      <workItem from="1543823841311" duration="5384000" />
+      <workItem from="1543831212954" duration="62000" />
+      <workItem from="1544428263311" duration="29000" />
       <workItem from="1543218918174" duration="6837000" />
       <workItem from="1543823973593" duration="1426000" />
       <workItem from="1543825416376" duration="4580000" />
@@ -308,11 +450,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="15556000" />
     <option name="totallyTimeSpent" value="14159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16888888" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15465961" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -324,6 +468,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32930514" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3282981" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32929292" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -331,9 +477,54 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16888888" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32929292" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32930514" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3282981" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -347,6 +538,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="CSV-Dateien eingefuegt" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/app.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_d3js.org_d3.v3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="251" column="6" selection-start-line="251" selection-start-column="6" selection-end-line="251" selection-end-column="6" />
     <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/uStates.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -378,6 +576,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/csv/year2.csv">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="269" column="21" selection-start-line="269" selection-start-column="21" selection-end-line="269" selection-end-column="21" />
+          <folding>
+            <element signature="e#37#73383#0" />
+          </folding>
         <state relative-caret-position="306">
           <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
@@ -401,6 +604,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
           <caret line="59" column="70" lean-forward="true" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/components/map/worldmap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="266" column="23" selection-start-line="266" selection-start-column="23" selection-end-line="266" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularjs-vorlage/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="38" column="80" selection-start-line="38" selection-start-column="80" selection-end-line="38" selection-end-column="80" />
         </state>
       </provider>
     </entry>

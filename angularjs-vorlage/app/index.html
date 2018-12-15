@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="de" ng-app="Vorlage">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
     <title>Vorlage</title>
     <link rel="icon" href="favicon.ico">
-  
+
     <link rel="stylesheet" href="vendor/material-icons-3.0.1/material-icons.css">
     <link rel="stylesheet" href="vendor/roboto/roboto.css">
-  
+
     <link rel="stylesheet" href="vendor/angular-material-1.1.10/angular-material.min.css">
-  
+
     <link rel="stylesheet" href="app.css">
-    
+
     <script src="vendor/jquery-3.3.1/jquery.min.js"></script>
     <script src="vendor/moment.js-2.22.2/moment.min.js"></script>
     <script src="vendor/moment.js-2.22.2/locale/de.js" charset="UTF-8"></script>
@@ -28,18 +28,24 @@
 
     <script src="vendor/angular-material-1.1.10/angular-material.min.js"></script>
     <script src="vendor/angular-ui-router-1.0.18/angular-ui-router.min.js"></script>
-  
+
     <script src="app.js"></script>
+    <script src="components/map/worldmap.js"></script>
 
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="components/map/uStates.js"></script>
     <script src="components/age.js"></script>
-  </head>
-
-  <body layout="column" ng-cloak>
-    <md-content class="md-padding">
-      <h1>MURDER</h1>
+</head>
+<!--TODO https://blog.rapid7.com/2017/05/31/how-to-combine-d3-with-angularjs/-->
+<body layout="column" ng-cloak>
+  <h1>MURDER</h1>
+  <worldmap>
+  </worldmap>
+  
+  <md-content class="md-padding">
       age
       <age></age>
-    </md-content>
-  </body>
+   </md-content>
+</body>
 
 </html>
