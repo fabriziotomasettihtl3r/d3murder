@@ -96,7 +96,7 @@ let self = this;
             let stateID = 1;
 
             //Create SVG element
-            let svg = d3.select("body")
+            let svg = d3.select("div#agePlaceholder")
                 .append("svg")
                 .attr("width", w)
                 .attr("height", h);
