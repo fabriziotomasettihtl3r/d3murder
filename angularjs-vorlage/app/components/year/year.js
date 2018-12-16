@@ -24,7 +24,7 @@ app.controller("yearController", function ($scope) {
 
     this.draw = () => {
         let years;
-        let stateName = this.state;
+        let stateName = document.getElementById("stateForYear");
         let yearRange = [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
         let svg = d3.select("svg#yearCurve");
 
