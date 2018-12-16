@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Years</title>
+    <title>Gender</title>
+
     <script src="../d3.min.js"></script>
     <script src="../papaparse.min.js"></script>
     <style>
@@ -16,52 +17,71 @@
     </style>
 </head>
 <body>
+
     <p id="stateName" style="display: none">{{ $ctrl.state }}</p>
-    <svg viewBox="0 0 400 200" id="yearCurve">
+    <svg viewBox="0 0 400 200" id="sexPiechart">
         <rect x="0" y="0" width="400" height="200" stroke="#000" stroke-width="5px" fill="#fff"></rect>
-        <path id="yearCurve" stroke="#dedede" stroke-width="2px"></path>
     </svg>
+
     <p>
-        Showing the yearly crime rates for <span id="state">Texas</span>.
-        The highest crimes per year were <span id="yearHighest"></span> crimes in the year <span id="highestYear"></span>.
-        The average crime rate is <span id="yearAverage"></span>.
+        Showing the gender of criminals and victims for <span id="state">Illinois</span> in the year 2017.
+        Of known cases, <span id="malePercentage"></span>% were male and <span id="femalePercentage"></span>% female.
+        The majority of criminals is <span id="majorCriminals"></span> and the majority of victims is <span id="majorVictims"></span>.
     </p>
 
     <script>
-        let years;
+        let percentages = [];
+        let percentageOffender = [];
         let stateName = document.getElementById("state").innerText;
-        let yearRange = [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017];
-        let svg = d3.select("svg#yearCurve");
+        let svg = d3.select("svg#sexPiechart");
+        let g = svg.append("g").attr("transform", "translate(100,100)");
 
-        //d3.csv('../../../../csv/year2.csv', function(data) {
-        //    console.log(data);
-            /*data.forEach(function(d) {
-
-            });*/
-            /*data.forEach(function(d) {
-                console.log(d);
-                if (d.State === stateName) {
-                    console.log("State was found.");
-                    years = curData;
-                }
-                else {
-                    console.log(`${d} is not the right State.`);
-                }
-            });*/
-        //});
-
-        Papa.parse('../../../../csv/year2.csv', {
+        Papa.parse('../../../../csv/offender_sex.csv', {
             header: true,
             download: true,
             dynamicTyping: true,
             complete: function (results) {
                 console.log("csv found", results);
                 let data = [];
-                let dataRange = [];
                 results.data.forEach(e => {
                     if (e.State === stateName.replace(/ /g,'')) {
                         console.log("state found", e);
-                        for (let i = yearRange[0]; i <= yearRange[yearRange.length - 1]; i++) {
+
+                        document.getElementById("malePercentage").innerText = e.Male / (e.Male + e.Female) * 100;
+                        document.getElementById("femalePercentage").innerText = e.Female / (e.Male + e.Female) * 100;
+                        document.getElementById("majorCriminals").innerText = (e.Male > e.Female)? "male" : "female";
+
+                        let sum = e.Male + e.Female + e.Unknown;
+                        percentages.push(e.Male / sum);
+                        percentages.push(e.Female / sum);
+                        percentages.push(e.Unknown / sum);
+                        percentageOffender.push(e.Male / sum);
+                        percentageOffender.push(e.Female / sum);
+                        percentageOffender.push(e.Unknown / sum);
+
+                        console.log("offeneder percantes calculated", percentageOffender);
+                        console.log("percentages set", percentages);
+
+                        let arc = d3.arc().innerRadius(0).outerRadius(80);
+                        let arcs = d3.pie()(percentages);
+
+                        console.log("arcs made", arc(arcs[0]));
+
+                        let counter = 1;
+                        let chart = g.selectAll("path")
+                            .data(arcs)
+                            .enter()
+                            .append("path")
+                            .style("fill", function (d,i) {
+                                switch (counter++) {
+                                    case 1: return "#55f"; break;
+                                    case 2: return "#f55"; break;
+                                    case 3: return "#555";
+                                }
+                            })
+                            .attr("d", arc);
+
+                        /*for (let i = yearRange[0]; i <= yearRange[yearRange.length - 1]; i++) {
                             data.push([i, e[i]]);
                             dataRange.push([e[i]]);
                         }
@@ -80,7 +100,7 @@
                         console.log("path string generated", pathString);
                         let scaleX = d3.scaleLinear().domain([d3.min(yearRange), d3.max(yearRange)]).range([25, 390]);
                         console.log("vertical range", [d3.min(yearRange), d3.max(yearRange)]);
-                        let scaleY = d3.scaleLinear().domain(/*[d3.min(dataRange), d3.max(dataRange)]*/[0, 850]).range([180, 10]);
+                        let scaleY = d3.scaleLinear().domain(/*[d3.min(dataRange), d3.max(dataRange)]*//*[0, 850]).range([180, 10]);
                         console.log("horizontal range", [d3.min(dataRange), d3.max(dataRange)]);
                         let scaledValues = [];
                         for (let i = 0; i < yearRange.length; i++) {
@@ -116,8 +136,8 @@
                             .attr('stroke-linecap', 'butt')
                             .attr("style", "stroke-width: 2");
 
-                    //<g class="horizontalAxis" transform="translate(0, 170)" />
-                    //<g class="verticalAxis" transform="translate(30, 0)" />
+                        //<g class="horizontalAxis" transform="translate(0, 170)" />
+                        //<g class="verticalAxis" transform="translate(30, 0)" />
                         let horizontalAxis = d3.axisBottom().scale(scaleX).tickFormat(d3.format("d"));
                         svg.append("g")
                             .attr("class", "horizontalAxis")
@@ -130,22 +150,12 @@
                             .attr("transform", "translate(25, 0)")
                             .attr("style", "font-size: 8px")
                             .call(verticalAxis);
-
+                    */
                     }
                 });
             }
         });
-
-        /*
-            let lineGenerator = d3
-                .line()
-                .curve(d3.curveNatural);
-            let pathString = lineGenerator(data);
-
-            d3.select('path')
-                .attr('d', pathString);
-                */
-
     </script>
+
 </body>
 </html>
