@@ -24,6 +24,11 @@
     </svg>
 
     <p>
+        <div style="background: #55f; display: inline-block; width: 8px; height: 8px"></div> Male<br>
+        <div style="background: #f55; display: inline-block; width: 8px; height: 8px"></div> Female<br>
+        <div style="background: #555; display: inline-block; width: 8px; height: 8px"></div> Unknown<br>
+    </p>
+    <p>
         Showing the gender of criminals and victims for <span id="state">Illinois</span> in the year 2017.
         Of known cases, <span id="malePercentage"></span>% were male and <span id="femalePercentage"></span>% female.
         The majority of criminals is <span id="majorCriminals"></span> and the majority of victims is <span id="majorVictims"></span>.
@@ -32,10 +37,13 @@
     <script>
         let percentages = [];
         let percentageOffender = [];
+        let percentageVictim = [];
         let stateName = document.getElementById("state").innerText;
         let svg = d3.select("svg#sexPiechart");
-        let g = svg.append("g").attr("transform", "translate(100,100)");
-
+        let g = svg.append("g").attr("transform", "translate(100,90)");
+        let g2 = svg.append("g").attr("transform", "translate(300,90)");
+        g.append("text").attr("dx", "0").attr("dy", "100").attr("text-anchor", "middle").text("offenders");
+        g2.append("text").attr("dx", "0").attr("dy", "100").attr("text-anchor", "middle").text("victims");
         Papa.parse('../../../../csv/offender_sex.csv', {
             header: true,
             download: true,
@@ -80,17 +88,34 @@
                             })
                             .attr("d", arc)
                             .on("mouseenter", function (d,i) {
+                                console.log(d);
+                                let color;
+                                let totalNumber;
+                                g.selectAll(".removableText").remove();
+                                g.append("circle").attr("cx", "0").attr("cy", "0").attr("r", "45").attr("fill", "white").attr("class", "removableText");
                                 switch (i) {
-                                    case 0: console.log("mouse enter male"); break;
-                                    case 1: console.log("mouse enter female"); break;
-                                    case 2: console.log("mouse enter unknown"); break;
+                                    case 0: console.log("mouse enter male");
+                                        color = "#55f";
+                                        totalNumber = e.Male;
+                                        g.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("male");
+                                        break;
+                                    case 1: console.log("mouse enter female");
+                                        color = "#f55";
+                                        totalNumber = e.Female;
+                                        g.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("female");
+                                        break;
+                                    case 2: console.log("mouse enter unknown");
+                                        color = "#555";
+                                        totalNumber = e.Unknown;
+                                        g.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("unknown");
+                                        break;
                                 }
+                                g.append("text").attr("dx", "0").attr("dy", "10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text(totalNumber + " (" + Math.round(d.data * 100) + "%)");
                             });
 
                         g.on("mouseleave", function () {
                             console.log("mouse leave");
-                            g.remove();
-                            g = svg.append("g").attr("transform", "translate(100,100)");
+                            g.selectAll(".removableText").remove();
 
                         });
 
@@ -164,6 +189,85 @@
                             .attr("style", "font-size: 8px")
                             .call(verticalAxis);
                     */
+                    }
+                });
+            }
+        });
+
+        Papa.parse('../../../../csv/victim_sex.csv', {
+            header: true,
+            download: true,
+            dynamicTyping: true,
+            complete: function (results) {
+                console.log("csv found", results);
+                let data = [];
+                results.data.forEach(e => {
+                    if (e.State === stateName.replace(/ /g,'')) {
+                        console.log("state found", e);
+
+                        //document.getElementById("malePercentage").innerText = e.Male / (e.Male + e.Female) * 100;
+                        //document.getElementById("femalePercentage").innerText = e.Female / (e.Male + e.Female) * 100;
+                        document.getElementById("majorVictims").innerText = (e.Male > e.Female)? "male" : "female";
+
+                        let sum = e.Male + e.Female + e.Unknown;
+                        //percentages.push(e.Male / sum);
+                        //percentages.push(e.Female / sum);
+                        //percentages.push(e.Unknown / sum);
+                        percentageVictim.push(e.Male / sum);
+                        percentageVictim.push(e.Female / sum);
+                        percentageVictim.push(e.Unknown / sum);
+
+                        console.log("victim percantes calculated", percentageVictim);
+                        //console.log("percentages set", percentages);
+
+                        let arc2 = d3.arc().innerRadius(0).outerRadius(80);
+                        let arcs2 = d3.pie()(percentageVictim);
+
+                        console.log("arcs made", arc2(arcs2[0]));
+
+                        let chart = g2.selectAll("path")
+                            .data(arcs2)
+                            .enter()
+                            .append("path")
+                            .style("fill", function (d,i) {
+                                switch (i) {
+                                    case 0: return "#55f"; break;
+                                    case 1: return "#f55"; break;
+                                    case 2: return "#555"; break;
+                                }
+                            })
+                            .attr("d", arc2)
+                            .on("mouseenter", function (d,i) {
+                                console.log(d);
+                                let color;
+                                let totalNumber;
+                                g2.selectAll(".removableText").remove();
+                                g2.append("circle").attr("cx", "0").attr("cy", "0").attr("r", "45").attr("fill", "white").attr("class", "removableText");
+                                switch (i) {
+                                    case 0: console.log("mouse enter male");
+                                            color = "#55f";
+                                            totalNumber = e.Male;
+                                            g2.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("male");
+                                            break;
+                                    case 1: console.log("mouse enter female");
+                                            color = "#f55";
+                                            totalNumber = e.Female;
+                                            g2.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("female");
+                                            break;
+                                    case 2: console.log("mouse enter unknown");
+                                            color = "#555";
+                                            totalNumber = e.Unknown;
+                                            g2.append("text").attr("dx", "0").attr("dy", "-10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text("unknown");
+                                            break;
+                                }
+                                g2.append("text").attr("dx", "0").attr("dy", "10").attr("text-anchor", "middle").attr("class", "removableText").style('fill', color).text(totalNumber + " (" + Math.round(d.data * 100) + "%)");
+                            });
+
+                        g2.on("mouseleave", function () {
+                            console.log("mouse leave");
+                            g2.selectAll(".removableText").remove();
+
+                        });
                     }
                 });
             }
