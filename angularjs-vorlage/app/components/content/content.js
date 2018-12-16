@@ -5,6 +5,9 @@ app.component("content", {
 
 app.controller("contentController", function ($scope) {
 
-    this.test = "test";
+    this.getState = (state) => {
+        console.log("received state:", state);
+        this.currentState = state;
+    }
 
 });

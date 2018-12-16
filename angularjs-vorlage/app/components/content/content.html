@@ -1,5 +1,3 @@
-{{ $ctrl.test || ":-(" }}
-t
 <div layout="row">
     <md-card flex="60" layout="column">
         <md-card-title flex="10">
@@ -8,7 +6,7 @@ t
             </md-card-title-text>
         </md-card-title>
         <md-card-content flex="90">
-            <worldmap getstate="$ctrl.test = 2"><!-- $ctrl.test = state; -->
+            <worldmap getstate="$ctrl.getState(state)">
             </worldmap>
         </md-card-content>
     </md-card>
@@ -20,6 +18,7 @@ t
             </md-card-title-text>
         </md-card-title>
         <md-card-content>
+            <year state="$ctrl.currentState"></year>
             <age></age>
         </md-card-content>
     </md-card>
