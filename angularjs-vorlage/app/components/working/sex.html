@@ -67,19 +67,32 @@
 
                         console.log("arcs made", arc(arcs[0]));
 
-                        let counter = 1;
                         let chart = g.selectAll("path")
                             .data(arcs)
                             .enter()
                             .append("path")
                             .style("fill", function (d,i) {
-                                switch (counter++) {
-                                    case 1: return "#55f"; break;
-                                    case 2: return "#f55"; break;
-                                    case 3: return "#555";
+                                switch (i) {
+                                    case 0: return "#55f"; break;
+                                    case 1: return "#f55"; break;
+                                    case 2: return "#555"; break;
                                 }
                             })
-                            .attr("d", arc);
+                            .attr("d", arc)
+                            .on("mouseenter", function (d,i) {
+                                switch (i) {
+                                    case 0: console.log("mouse enter male"); break;
+                                    case 1: console.log("mouse enter female"); break;
+                                    case 2: console.log("mouse enter unknown"); break;
+                                }
+                            });
+
+                        g.on("mouseleave", function () {
+                            console.log("mouse leave");
+                            g.remove();
+                            g = svg.append("g").attr("transform", "translate(100,100)");
+
+                        });
 
                         /*for (let i = yearRange[0]; i <= yearRange[yearRange.length - 1]; i++) {
                             data.push([i, e[i]]);
