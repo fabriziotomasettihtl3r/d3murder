@@ -60,6 +60,17 @@ app.controller("yearController", function ($scope) {
                             data.push([i, e[i]]);
                             dataRange.push([e[i]]);
                         }
+
+
+                        //Extra-Info
+                        document.getElementById("yearHighest").innerText = d3.max(dataRange);
+                        for (let i = 0; i < data.length; i++) {
+                            if (data[i][1] === d3.max(dataRange)[0])
+                                document.getElementById("highestYear").innerText = data[i][0];
+                        }
+                        document.getElementById("yearAverage").innerText = d3.mean(dataRange);
+
+
                         console.log("data generated", data);
                         let lineGenerator = d3.line().curve(d3.curveNatural);
                         let pathString = lineGenerator(data);
