@@ -5,6 +5,6 @@ app.component("content", {
 
 app.controller("contentController", function ($scope) {
 
-
+    this.test = "test";
 
 });

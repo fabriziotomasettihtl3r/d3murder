@@ -1,9 +1,12 @@
 app.component("worldmap", {
     templateUrl: "components/map/worldmap.html",
-    controller: "worldmapController"
+    controller: "worldmapController",
+    bindings: {
+        getstate: "&"
+    }
 });
 
-app.controller("worldmapController", function () {
+app.controller("worldmapController", function ($scope) {
     let self1 = this;
 
     this.$onInit = () => {
@@ -275,6 +278,10 @@ app.controller("worldmapController", function () {
         function showState(d) {
             self1.hi = d.n;
             console.log(self1.hi);
+            $scope.$apply();
+
+            console.log("worldmap.getstate():", d.n);
+            self1.getstate({ state: d.n });
         }
 
         d3.select(id).selectAll(".state")
